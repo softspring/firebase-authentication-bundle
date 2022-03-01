@@ -1,6 +1,6 @@
 {
     "name": "softspring/firebase-authentication-bundle",
-    "description": "This bundle",
+    "description": "This bundle provides firebase auth integration",
     "type": "symfony-bundle",
     "license": "MIT",
     "minimum-stability": "dev",
