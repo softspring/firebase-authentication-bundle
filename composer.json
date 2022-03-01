@@ -7,8 +7,7 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.4",
-        "kreait/firebase-php": "^6.1",
-        "guzzlehttp/guzzle": "^7.2.0"
+        "kreait/firebase-php": "^6.1"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "9999999-dev"
