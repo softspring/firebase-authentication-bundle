@@ -1,0 +1,29 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+#    security.authentication.provider.firebase:
+#        class: Softspring\FirebaseAuthenticationBundle\Security\Authentication\Provider\FirebaseAuthenticationProvider
+#        abstract: true
+#        arguments: [null, null, null, '@Kreait\Firebase\Auth', '%security.authentication.hide_user_not_found%']
+
+    Softspring\FirebaseAuthenticationBundle\EventListener\CheckFirebasePasswordCredentialsListener:
+        arguments: ['@sfs_firebase_authentaction.firebase.auth']
+        tags: ['kernel.event_subscriber']
+
+    security.authenticator.firebase_login:
+        class: Softspring\FirebaseAuthenticationBundle\Authenticator\FirebaseLoginAuthenticator
+        arguments:
+            - '@security.http_utils'
+            - null
+            - null
+            - null
+            - null
+
+    sfs_firebase_authentaction.firebase:
+        class: Kreait\Firebase\Factory
+
+    sfs_firebase_authentaction.firebase.auth:
+        class: Kreait\Firebase\Auth
+        factory: ['@sfs_firebase_authentaction.firebase', 'createAuth']
