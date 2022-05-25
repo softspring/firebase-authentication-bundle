@@ -98,7 +98,7 @@ class CheckFirebasePasswordCredentialsListener implements EventSubscriberInterfa
         $request->attributes->set('_security_firebase_cookie', new Cookie(
             '_pvet_token',
             $passport->getAttribute('firebaseJwt')['id_token'],
-            time()+$passport->getAttribute('firebaseJwt')['expires_in'],
+            time() + $passport->getAttribute('firebaseJwt')['expires_in'],
             '/',
             'pvet.qpv.local',
             true,
@@ -127,7 +127,7 @@ class CheckFirebasePasswordCredentialsListener implements EventSubscriberInterfa
         return [
             CheckPassportEvent::class => 'checkPassport',
             LoginSuccessEvent::class => 'setJwtToken',
-            KernelEvents::RESPONSE => 'onKernelResponse'
+            KernelEvents::RESPONSE => 'onKernelResponse',
         ];
     }
 }

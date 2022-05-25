@@ -42,12 +42,6 @@ class FirebaseAuthenticationProvider extends UserAuthenticationProvider
 
     /**
      * FirebaseAuthenticationProvider constructor.
-     *
-     * @param UserProviderInterface $userProvider
-     * @param UserCheckerInterface  $userChecker
-     * @param string                $providerKey
-     * @param Auth                  $firebaseAuth
-     * @param bool                  $hideUserNotFoundExceptions
      */
     public function __construct(UserProviderInterface $userProvider, UserCheckerInterface $userChecker, string $providerKey, Auth $firebaseAuth, bool $hideUserNotFoundExceptions = true)
     {
